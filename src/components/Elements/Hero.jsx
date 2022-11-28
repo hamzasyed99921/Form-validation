@@ -8,7 +8,7 @@ const Signup = () => {
   // console.log(email);
 
   const emailRegx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g
-  const regEx = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$/g;
+  const regEx = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[a-zA-Z\d@$!%*#?&]{8,}$/g;
   const data = regEx.test(password);
   // const passwordValidation = (e) => {
   //   e.preventDefault();
@@ -62,8 +62,8 @@ const Signup = () => {
                     ""
                   ) : (
                     <p className="small_txt">
-                      ** Password must be at least one Capital , Small & one
-                      Digit
+                      ** Password must be at least one Capital , Small , Digit & one
+                      Special Character
                     </p>
                   )}
 
