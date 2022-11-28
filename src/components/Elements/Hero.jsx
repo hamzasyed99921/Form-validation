@@ -7,6 +7,7 @@ const Signup = () => {
   const [message, setMessage] = useState("");
   // console.log(email);
 
+  const emailRegx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g
   const regEx = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{6,}$/g;
   const data = regEx.test(password);
   // const passwordValidation = (e) => {
@@ -41,6 +42,13 @@ const Signup = () => {
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your Email"
                   />
+                  {emailRegx.test(email) ? (
+                    ""
+                  ) : (
+                    <p className="small_txt">
+                      ** Email Must be Proper
+                    </p>
+                  )}
                   <label>Password:</label>
                   <input
                     type="password"
